@@ -50,14 +50,10 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  email: "jeancharles.mariani@iit.it"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  github: JCMariani
+  twitter: @mariani_jc
 #  medium: yourname
 #  reddit: yourname
 #  linkedin: daattali
@@ -74,8 +70,8 @@ social-network-links:
 #  calendly: yourname
 #  mastodon: instance.url/@username
 #  bluesky: yourname
-#  ORCID: your ORCID ID
-#  google-scholar: your google scholar
+ORCID: 0000-0003-1943-1591
+google-scholar: Jean-Charles Mariani
 #  discord: "invite_code" or "users/userid" or "invite/invite_code" 
 #  kaggle: yourname
 #  hackerrank: yourname
@@ -85,7 +81,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: https://rss.app/feeds/IvVrFzziImCWEmrm.xml
 
 ###########################
 # --- General options --- #
@@ -93,14 +89,14 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  twitter: fqlse
+  facebook: false
   linkedin: true
   vk: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+# url-pretty: "MyWebsite.com"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -135,16 +131,16 @@ navbar-var-length: false
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
 page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
+text-col: "#450000"
+link-col: "#fc6f03"
+hover-col: "#8c4701"
 navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
+navbar-text-col: "#610000"
 navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+footer-text-col: "#730000"
+footer-link-col: "#fc6f03"
+footer-hover-col: "#8c4701"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
