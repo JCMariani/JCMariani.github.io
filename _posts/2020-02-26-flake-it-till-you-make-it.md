@@ -2,9 +2,9 @@
 layout: post
 title: Principle of Functional Connectivity
 subtitle: From the neuronal network to brain dynamics
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/post-00_RS_FC.png
 thumbnail-img: /assets/img/post-00_RS_FC_thumb.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/post-00_RS_FC.png
 tags: [theory, neuroimaging, functional connectivity]
 author: JC Mariani
 ---
