@@ -6,7 +6,8 @@ subtitle: "Temporal structure in spiking patterns of ganglion cells defines perc
 
 <img src="https://JCMariani.github.io/assets/img/2018_Ho_Temporal-structure.png" alt="drawing" width="50%" class="center"/>
 
+<div class:"center">
 [pdf](https://www.nature.com/articles/s41598-018-21447-1.pdf)
-
+</div>
 
 <!-- 00_Temporal-prosthesis_Ho_2018.md -->
