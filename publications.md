@@ -13,8 +13,9 @@ title: "list of my publications"
 
 ### 2018 - Temporal structure in spiking patterns of ganglion cells defines perceptual thresholds in rodents with subretinal prosthesis
 
+<img src="https://JCMariani.github.io/assets/img/2018_Ho_Temporal-structure.png" alt="drawing" width="50%" class="center"/>
 <!-- <a href="https://JCMariani.github.io/_posts/publications/00_Temporal-prosthesis_Ho_2018/00_Temporal-prosthesis_Ho_2018.md"> -->
-<img src="https://JCMariani.github.io/_posts/publications/00_Temporal-prosthesis_Ho_2018/2018_Ho_Temporal-structure.png" alt="drawing" width="50%" class="center"/>
+<!-- <img src="https://JCMariani.github.io/_posts/publications/00_Temporal-prosthesis_Ho_2018/2018_Ho_Temporal-structure.png" alt="drawing" width="50%" class="center"/> -->
 <!-- </a> -->
 
 Elton Ho, Henri Lorach, Georges Goetz, Florian Laszlo, Xin Lei, Theodore Kamins, Jean-Charles Mariani, Alexander Sher & Daniel Palanker 
