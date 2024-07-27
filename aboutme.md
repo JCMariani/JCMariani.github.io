@@ -11,7 +11,7 @@ My name is Jean-Charles Mariani. I am a postdoctoral researcher in Alessandro Go
   
 <img src="https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mouse_head_brain.png" alt="drawing" width="50%" class="center"/>
 
-<\div>
+</div>
 
 I am now following up on this work by studying the emergence of dynamical patterns in both functional Magnetic Resonance Imaging (fMRI) and fUSI. My work remains at the interface of experiments for which I bring counsels to optimise the yield of fUSI and analysis with a particular expertise on signal processing. Nevertheless, my main effort is focused on the development of dynamical generative models of the mouse brain. I have a specific interest in neuromodulation contrl on brain haemodynamics and the concomittant role of Thalamus in influencing the cortical activity synchronisation. 
 
