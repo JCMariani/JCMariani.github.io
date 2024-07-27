@@ -15,7 +15,7 @@ title: "list of my publications"
 
 
 <!-- <a href="https://JCMariani.github.io/_posts/publications/00_Temporal-prosthesis_Ho_2018/00_Temporal-prosthesis_Ho_2018.html"> -->
-<a href="https://JCMariani.github.io/_posts/2020-02-26-flake-it-till-you-make-it.html">
+<a href="https://JCMariani.github.io//2020-02-26-flake-it-till-you-make-it/">
 <img src="https://JCMariani.github.io/assets/img/2018_Ho_Temporal-structure.png" alt="drawing" width="25%" class="center"/>
 </a>
 
