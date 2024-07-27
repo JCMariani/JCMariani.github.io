@@ -9,14 +9,14 @@ My name is Jean-Charles Mariani. I am a postdoctoral researcher in Alessandro Go
 <!--  ![mouse](https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mouse_head_brain.png) -->
 <div style="text-align: center;">
   
-<img src="https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mouse_head_brain.png" alt="drawing" width="50%" class="center"/>
+<img src="https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mouse_head_brain.png" alt="drawing" width="25%" class="center"/>
 
 </div>
 
 I am now following up on this work by studying the emergence of dynamical patterns in both functional Magnetic Resonance Imaging (fMRI) and fUSI. My work remains at the interface of experiments for which I bring counsels to optimise the yield of fUSI and analysis with a particular expertise on signal processing. Nevertheless, my main effort is focused on the development of dynamical generative models of the mouse brain. I have a specific interest in neuromodulation contrl on brain haemodynamics and the concomittant role of Thalamus in influencing the cortical activity synchronisation. 
 
 <!-- ![brain](https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mb3.png) -->
-<img src="https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mb3.png" alt="drawing" width="50%" class="center"/>
+<img src="https://github.com/JCMariani/JCMariani.github.io/blob/master/assets/img/mb3.png" alt="drawing" width="25%" class="center" rotate="90"/>
 
 After work I enjoy watching random movies, ideally at the theater. I developped a naive passion for [drawing and linocut](https://www.instagram.com/mc.jibulles/). I printed some of those on T-shirts and shower curtains, if you look for inspiration for christmas gifts I encourage you to check on my [online shop](https://mcjibulles.creator-spring.com/). I love all kinds of fermentation, from mead to pickles and most notably kefir. Finally in a dedication for recycling I specialised myself in palettes constructions: shelves, benches, Eiffel Tower or sofa, name it or sketch it, I'll be happy to build it.
 
