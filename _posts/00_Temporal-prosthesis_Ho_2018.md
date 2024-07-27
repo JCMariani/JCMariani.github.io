@@ -8,3 +8,5 @@ title: "Temporal structure in spiking patterns of ganglion cells defines percept
 <div class="center">
 [pdf](https://www.nature.com/articles/s41598-018-21447-1.pdf)
 </div>
+
+<!-- 00_Temporal-prosthesis_Ho_2018.md -->
