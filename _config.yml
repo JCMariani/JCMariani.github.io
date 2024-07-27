@@ -89,7 +89,7 @@ rss-description: https://rss.app/feeds/IvVrFzziImCWEmrm.xml
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: fqlse
+  twitter: false
   facebook: false
   linkedin: true
   vk: false
@@ -132,15 +132,15 @@ navbar-var-length: false
 
 page-col: "#FFFFFF"
 text-col: "#450000"
-link-col: "#fc6f03"
-hover-col: "#8c4701"
+link-col: "#FC6F03"
+hover-col: "#8C4701"
 navbar-col: "#EAEAEA"
 navbar-text-col: "#610000"
 navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
 footer-text-col: "#730000"
-footer-link-col: "#fc6f03"
-footer-hover-col: "#8c4701"
+footer-link-col: "#FC6f03"
+footer-hover-col: "#8C4701"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
