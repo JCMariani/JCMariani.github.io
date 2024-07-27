@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Temporal structure in spiking patterns of ganglion cells defines perceptual thresholds in rodents with subretinal prosthesis"
+title: "Article"
+subtitle: "Temporal structure in spiking patterns of ganglion cells defines perceptual thresholds in rodents with subretinal prosthesis"
 ---
 
 <img src="https://JCMariani.github.io/assets/img/2018_Ho_Temporal-structure.png" alt="drawing" width="50%" class="center"/>
