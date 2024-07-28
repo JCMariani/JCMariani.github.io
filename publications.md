@@ -3,7 +3,7 @@ layout: page
 title: "list of my publications"
 ---
 
-<hr color="#450000" height="8px">
+<hr color="#450000" size="8">
 
 ### <span style="color:#FC6F03">2024</span> - Connectomic and behavioral alterations in creatine transporter deficiency are partially normalized by gene therapy
 
@@ -15,7 +15,7 @@ Caterina Montani, Alberto Galbusera, Bianca D’Epifanio, Elsa Ghirardini, Sara 
 
 bioRxiv <br>12/01/2024 <br>DOI: 10.1101/2024.01.12.575377
 
-<hr color="#450000" height="8px">
+<hr color="#450000" size="8">
 
 ### <span style="color:#FC6F03">2022</span> - Altered Cortical Trigeminal Fields Excitability by Spreading Depolarization Revealed with in Vivo Functional Ultrasound Imaging Combined with Electrophysiology
 
@@ -27,7 +27,7 @@ Laurence Bourgeais-Rambur, Laurianne Beynac, Jean-Charles Mariani, Mickael Tante
 
 The Journal of Neuroscience <br>10/08/2022 <br>DOI: 10.1523/JNEUROSCI.1825-21.2022 
 
-<hr color="#450000" height="8px">
+<hr color="#450000" size="8">
 
 ### <span style="color:#FC6F03">2021</span> - Microglia modulate blood flow, neurovascular coupling, and hypoperfusion via purinergic actions
 
@@ -39,7 +39,7 @@ Eszter Császár, Nikolett Lénárt, Csaba Cserép, Zsuzsanna Környei, Rebeka F
 
 Journal of Experimental Medicine <br>07/03/2022 <br>DOI: 10.1084/jem.20211071 
 
-<hr color="#450000" height="8px">
+<hr color="#450000" size="8">
 
 ### <span style="color:#FC6F03">2021</span> - Whole-brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging
 
@@ -51,7 +51,7 @@ Adrien Bertolo, Mohamed Nouhoum, Silvia Cazzanelli, Jeremy Ferrier, Jean-Charles
 
 JoVE (Journal of Visualized Experiments) <br>24/02/2021 <br>DOI: 10.3791/62267 
 
-<hr color="#450000" height="8px">
+<hr color="#450000" size="8">
 
 ### <span style="color:#FC6F03">2018</span> - Temporal structure in spiking patterns of ganglion cells defines perceptual thresholds in rodents with subretinal prosthesis
 
