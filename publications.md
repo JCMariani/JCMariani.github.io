@@ -3,6 +3,8 @@ layout: page
 title: "list of my publications"
 ---
 
+<hr style="height:2px;border-width:0;color:#450000">
+
 ### <span style="color:#FC6F03">2024</span> - Connectomic and behavioral alterations in creatine transporter deficiency are partially normalized by gene therapy
 
 <a href="https://JCMariani.github.io/04_Connectomic-Therapy_Montani_2023">
