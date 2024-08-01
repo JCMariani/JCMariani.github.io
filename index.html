@@ -10,17 +10,21 @@ Welcome on my webpage. I am sharing here posts about my passions: Neuroscience, 
   
 <img src="https://JCMariani.github.io/assets/img/Namaste_2.png" alt="drawing" width="50%" class="center"/>
 
-  <div id="homeid" class="col-sm-8">
-    <center>
-        <h1>Here are the main sections of this website</h1>
-    </center>
+  <div class="homeContainer">
+    <div class="homeBox" id="first-column">
+      <center>
+          <h1>Here are the main sections of this website</h1>
+      </center>
+  
+    <h2>Here is one content</h2>
+    <h2>Here is one other content</h2>
+    <h2>And one more</h2>
+    </div>
 
-  <h2>Here is one content</h2>
-  <h2>Here is one other content</h2>
-  <h2>And one more</h2>
-    
+  <div class="homeBox" id="second-column" >
+    {% include news.html %}
   </div>
-
-<div id="newsid" class="col-sm-4" >
-  {% include news.html %}
+    
 </div>
+
+
