@@ -13,8 +13,6 @@
     transform: rotate(90deg);
 }
 
-small { display: block }
-
 /* Home, News */
 #newsid p {
 	text-align: left;
@@ -29,42 +27,26 @@ small { display: block }
 	margin-bottom: 6px;
 }
 
-/* Grid overrides */
-.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-5, .col-sm-6,
-.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
-	padding-left: 16px;
-	padding-right: 16px;
+.homeContainer {
+  	display: inline-grid;
+  	grid-template: 400px 100px / 400px;
 }
 
-/* Grid overrides */
-.col-sm-4 {
-	padding-left: 26px;
-	padding-right: 26px;
+.homeBox {
+	border: 1px solid;
 }
 
-// Wells
-// --------------------------------------------------
-
-// Base class
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f7e6e6;
-  border: 1px solid #850101;
-  border-radius: 5px;
-  blockquote {
-    border-color: #ddd;
-    border-color: rgba(0,0,0,.15);
-  }
+#first-column{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
 }
 
-// Sizes
-.well-lg {
-  padding: 24px;
-  border-radius: 5px;
+#second-column{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
 }
-.well-sm {
-  padding: 9px;
-  border-radius: 2px;
-}
+
