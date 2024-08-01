@@ -33,7 +33,8 @@
 }
 
 .homeBox {
-	border: 1px solid;
+	margin-left: 6px;
+	margin-right: 6px;
 }
 
 #first-column{
