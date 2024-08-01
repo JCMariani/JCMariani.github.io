@@ -24,6 +24,7 @@ navbar-links:
   Publications: "publications"
   Sections:
   - Drawings: "drawings"
+  - News: "allnews"
   #  Resources:
   #  - Beautiful Jekyll: "https://beautifuljekyll.com"
   #  - Learn markdown: "https://www.markdowntutorial.com/"
