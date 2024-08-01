@@ -51,7 +51,7 @@ On this page I am showing you a few drawings of mine. I started to draw in prepa
 <small>Trilogy of time II. The man of the Past. The Janusian lobster. Tha man of the future.</small>
 </center>
 
-<img src="https://JCMariani.github.io/assets/img/Drawings_09_FdB.png" alt="drawing" width="50%" class="center"/>
+<img src="https://JCMariani.github.io/assets/img/Drawings_09_FdB.png" alt="drawing" height="50%" class="center"/>
 <center>
 <small>Wood fairy.</small>
 </center>
