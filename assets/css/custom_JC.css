@@ -29,7 +29,7 @@
 
 .homeContainer {
   	display: inline-grid;
-  	grid-template: 90% 10% / auto;
+  	grid-template: 90% 10% / max-content;
 }
 
 .homeBox {
