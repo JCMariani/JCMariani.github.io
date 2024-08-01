@@ -14,3 +14,17 @@
 }
 
 small { display: block }
+
+/* Home, News */
+#newsid p {
+	text-align: left;
+}
+
+#homeidtmp h1 {
+	text-align: center;
+}
+
+#newsid img {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
