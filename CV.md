@@ -2,6 +2,7 @@
 layout: page
 title: CV
 subtitle: Here is my resume
+permalink: /CV.html
 ---
 
 Please find here my resume:
