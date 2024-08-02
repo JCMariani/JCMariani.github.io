@@ -1,25 +1,25 @@
 - date: 01. August 2021
   headline: My main PhD paper is out as a [preprint](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1).
-  image: ![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)
+  image: "![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)"
   extended: "We investigated the fingerprint of opioids on awake, behaving mice FC. We demonstrate some static FC dysconnection, morphine injection inducing the apparition of two main anticorrelated super-synchronous networks: thalamo-cortical vs. thalamo-hippocampal. In addition we show that this pattern is explained by a rich spatio temporal reorganisation of brain aemodynamics. Finally we link this fingerprint to MOR activation and describe a two steps process, where injection initiates a fast, transient hyperemia concurrently with hyperlocomotor event; These first 10min are followed by a more gradual shift of FC which matches analgesia and phosphorylation of the receptor dynamics."
     
 - date: 28. June 2024
   headline: Super happy to present our last results with Chiara Pepe on FC in anaesthetised mice at [fENS2024](https://fensforum.org/)!! Come pass by at poster [PS05-28AM-474](https://twitter.com/mariani_jc/status/1805252218494320818) on Friday.
-  image: ![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)
+  image: "![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)"
   extended: "Using an amazing dataset aquired by Chiara Pepe, I investigated the properties of FC networks in anaesthetised mice measured with fUSI. In addition to recapitulate fMRI typical RSNs, we showed that FC patterns co-vary with structural connectivity, acounting for 55.6% of the total variance of Structural Functional connectivity matrix. Finally by investigating the dynamical features of these signals, we showed that recently described [CMODES](https://www.biorxiv.org/content/biorxiv/early/2023/07/19/2023.07.19.549681.full.pdf) can be defined as attractors of the two steps CAPs transition dynamics."
 
 - date: 19. June 2024
   headline: I finally graduated officially from Universite Paris Cite... I have now the paper that goes with the PhD.
-  image: ![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)
+  image: "![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)"
   extended: "The end of a long journey." 
 
 - date: 13. June 2024
   headline: Extremely honoured to present "Advances in functional Connectivity Mapping" at the 9th Neuroengineering School Massimo Grattarola in Genova.
-  image: ![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)
+  image: "![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)"
   extended: "Excellent class on Neuroengineering. It was great to discover once more this field a few years after my master at Imperial College. I felt priviledged to present the results of our lab among such renown scientists." 
 
 - date: 06. June 2024
   headline: Presenting our results with Chiara Pepe at the ICTP Theoretical Neuroscience Workshop for young Scientists poster session in Trieste. 
-  image: ![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)
+  image: "![image](https://JCMariani.github.io/assets/img/News_2024-08-01_BioRxiv_Opioids.png)"
   extended: "Great week in Trieste with Dr. Daniel Gutierrez. I discovered a whole new field of research. I hope to meet this great comunity again in the next few years."
 
