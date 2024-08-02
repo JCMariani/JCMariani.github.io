@@ -5,6 +5,19 @@ title: "list of my publications"
 
 <hr color="#450000" style="height: 8px;">
 
+### <span style="color:#FC6F03">2024</span> - Opioid-Induced Inter-regional Dysconnectivity Correlates with Analgesia in Awake Mouse Brains
+
+<a href="https://JCMariani.github.io/05_Opioid-brains_Mariani">
+<img src="https://JCMariani.github.io/assets/img/2024_Mariani_opioid-brains.png" alt="drawing" width="15%" class="center"/>
+</a>
+
+Jean-Charles Mariani, Samuel Diebolt, Laurianne Beynac, Renata Santos, Stefan Schulz, Thomas Deffieux, Mickael Tanter, Zsolt Lenkei, Andrea Kliewer
+
+bioRxiv <br>31/07/2024 <br>DOI: 10.1101/2024.07.30.604249
+
+
+<hr color="#450000" style="height: 8px;">
+
 ### <span style="color:#FC6F03">2024</span> - Connectomic and behavioral alterations in creatine transporter deficiency are partially normalized by gene therapy
 
 <a href="https://JCMariani.github.io/04_Connectomic-Therapy_Montani_2023">
