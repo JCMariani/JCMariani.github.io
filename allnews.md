@@ -8,10 +8,10 @@ permalink: /allnews.html
 # News
 
 {% for article in site.data.news %}
-<p><b>{{ article.date }}</b> <br> 
-  {{ article.headline | markdownify}} <br> 
+<p><b>{{ article.date }}</b> <br line-height="120%"> 
+  {{ article.headline | markdownify}} <br line-height="120%"> 
   {% if article.image %} 
-  {{ article.image | markdownify}} <br>
+  {{ article.image | markdownify}} <br line-height="120%">
   {% endif %}
   {{ article.extended | markdownify}}</p>
 {% endfor %}
