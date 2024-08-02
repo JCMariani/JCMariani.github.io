@@ -24,12 +24,9 @@ navbar-links:
   Publications: "publications"
   Sections:
   - Drawings: "drawings"
-  - News: "allnews"
   - CV: "CV"
-  #  Resources:
-  #  - Beautiful Jekyll: "https://beautifuljekyll.com"
-  #  - Learn markdown: "https://www.markdowntutorial.com/"
-  # Author's home: "https://deanattali.com"
+  - PhD: "PhD"
+  - News: "allnews"
 
 ################
 # --- Logo --- #
