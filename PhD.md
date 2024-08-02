@@ -11,52 +11,52 @@ permalink: /PhD.html
 
 My thesis: [Quantification and modelling of functional connectivity perturbation in ultrafast power doppler imaging of the awake mice brain : pharmacological fingerprints on awake brain activity](https://theses.hal.science/tel-04420129) is openly accessible online. If the main chatper is probaly **part V** with the first version of [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1). I used this document to detail as much as I could the theoretical context of this study (principles of: **Functional Ultrasound Imaging (fUSI)**, **Functional Connectivity (FC)**, philosophy of data sharing...). I also wrote a lot of technical details for curious fUS experimenters and analysts. I propose here some reading recommendations depending on your interests in the shape of an extended table of content:
 
-##I Introduction
+## I Introduction
 
-###1 Preamble
-###2 General Introduction
-###3 fUS
-###4 Neurovascular Coupling
-###5 Functional Connectivity
-###6 Pharmacology
-###7 Summary
+### 1 Preamble
+### 2 General Introduction
+### 3 fUS
+### 4 Neurovascular Coupling
+### 5 Functional Connectivity
+### 6 Pharmacology
+### 7 Summary
 
-##II Preparation for awake imaging
+## II Preparation for awake imaging
 
-###8 Article: Whole-Brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging
-###9 Protocols
-###10 Results
-###11 Discussions
+### 8 Article: Whole-Brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging
+### 9 Protocols
+### 10 Results
+### 11 Discussions
 
-##III Awake rs-FC with fUS
+## III Awake rs-FC with fUS
 	
-###12 artefacts
-###13 Analysis Benchmark
+### 12 artefacts
+### 13 Analysis Benchmark
 
-##IV Opioid fingerprint
+## IV Opioid fingerprint
 
-###14 Article: Fingerprint of opioids on functional connectivity in awake behaving mice using functional ultrasound
-###15 Discussions
+### 14 Article: Fingerprint of opioids on functional connectivity in awake behaving mice using functional ultrasound
+### 15 Discussions
 
-##V Conclusions
+## V Conclusions
 
-###References
-###List of Figures
+### References
+### List of Figures
 
-##VI Appendices
+## VI Appendices
 
-###A Articles
-###B Setup
-###C Acquisition
-###D Analysis pipeline
-###E Preparation details
-###F Data Structures
-###G Opioids fingerprint
-###H Cannabinoids fingerprint
-###I Psilocybin fingerprint
-###J Conscious states fingerprint
-###K Comparison of various fingerprints
-###L Co-Activation Pattern analysis
+### A Articles
+### B Setup
+### C Acquisition
+### D Analysis pipeline
+### E Preparation details
+### F Data Structures
+### G Opioids fingerprint
+### H Cannabinoids fingerprint
+### I Psilocybin fingerprint
+### J Conscious states fingerprint
+### K Comparison of various fingerprints
+### L Co-Activation Pattern analysis
 
 # For fUS enthusiastic
 
