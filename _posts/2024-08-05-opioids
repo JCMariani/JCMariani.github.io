@@ -11,3 +11,8 @@ mathjax: true
 ---
 
 This post is adapted from this [**X** thread](https://x.com/ZsoltLenkei/status/1818995234258157944) by [@ZsoltLenkei](https://x.com/ZsoltLenkei) about the main results of my PhD thesis published as a [preprint](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1) on BioRxiv server.
+
+I will explain breifly here the main points of [Mariani et al. 2024](https://JCMariani.github.io/05_Opioid-brains_Mariani).
+
+<img src="https://JCMariani.github.io/assets/img/post-00_resting_state_networks.jpg" alt="drawing" class="center"/>
+<small>**Fig2.** Illustration of the main resting state netowrks identified by **Independant Component Analysis** across six different studies from \[Van den Heuvel 2010\]. These mode can be identified reliably across multiple cohorts with an unbiased method.</small>
