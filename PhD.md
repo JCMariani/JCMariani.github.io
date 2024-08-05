@@ -9,10 +9,10 @@ permalink: /PhD.html
 <img src="https://JCMariani.github.io/assets/img/PhD_thesis_cover.png" alt="drawing" width="15%" class="center"/>
 </a>
 
-My thesis: [Quantification and modelling of functional connectivity perturbation in ultrafast power doppler imaging of the awake mice brain : pharmacological fingerprints on awake brain activity](https://theses.hal.science/tel-04420129) is openly accessible online. If the main chatper is probaly **part V** with the first version of [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1). I used this document to detail as much as I could the theoretical context of this study (principles of: **Functional Ultrasound Imaging (fUSI)**, **Functional Connectivity (FC)**, philosophy of data sharing...). I also wrote a lot of technical details for curious fUS experimenters and analysts. I propose here some reading recommendations depending on your interests in the shape of an extended table of content:
+My thesis: [Quantification and modelling of functional connectivity perturbation in ultrafast power doppler imaging of the awake mice brain : pharmacological fingerprints on awake brain activity](https://theses.hal.science/tel-04420129) is openly accessible online. If the main chatper is probaly **part-V** with the first version of [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1). I used this document to detail as much as I could the theoretical context of this study (principles of: **Functional Ultrasound Imaging (fUSI)**, **Functional Connectivity (FC)**, philosophy of data sharing...). I also wrote a lot of technical details for curious fUS experimenters and analysts. I propose here some reading recommendations depending on your interests in the shape of an extended table of content:
 
 ## I Introduction
-
+<br/>
 ### 1 Preamble
 ### 2 General Introduction
 ### 3 fUS
@@ -20,31 +20,31 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 ### 5 Functional Connectivity
 ### 6 Pharmacology
 ### 7 Summary
-
+<br/>
 ## II Preparation for awake imaging
-
+<br/>
 ### 8 Article: Whole-Brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging
 ### 9 Protocols
 ### 10 Results
 ### 11 Discussions
-
+<br/>
 ## III Awake rs-FC with fUS
-	
+<br/>
 ### 12 artefacts
 ### 13 Analysis Benchmark
-
+<br/>
 ## IV Opioid fingerprint
-
+<br/>
 ### 14 Article: Fingerprint of opioids on functional connectivity in awake behaving mice using functional ultrasound
 ### 15 Discussions
-
+<br/>
 ## V Conclusions
-
+<br/>
 ### References
 ### List of Figures
-
+<br/>
 ## VI Appendices
-
+<br/>
 ### A Articles
 ### B Setup
 ### C Acquisition
@@ -57,7 +57,8 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 ### J Conscious states fingerprint
 ### K Comparison of various fingerprints
 ### L Co-Activation Pattern analysis
-
+<br/>
+<br/>
 # For fUS enthusiastic
 
 I recommend to read in priority:
