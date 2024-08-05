@@ -2,7 +2,7 @@
 <h4 style="margin-left: 1em;">News</h4>
 
 {% for article in site.data.news limit:4 %}
-<p style="margin-left: 1em; margin-right: 6px;"><b>{{ article.date }}</b><br style="line-height: 120%;">{{ article.headline | markdownify}}</p>
+<p style="margin-left: 6px; margin-right: 6px;"><b>{{ article.date }}</b><br line-height="120%">{{ article.headline | markdownify}}</p>
 {% endfor %}
 
 <h4><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">... see all News</a></h4>
