@@ -59,13 +59,18 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 <h3 style = "text-indent: 50px;">  L Co-Activation Pattern analysis </h3>
 <br/>
 <br/>
+
 # For fUS enthusiastic
 
 I recommend to read in priority:
 
 **Introduction**: 
 <br/>
-- **3 fUS** which explains the theory of fUSI signal (the full acquisition pipeline from emission to acquisition)
+- **2 General Introduction** gives a general framework for imaging to introduces main principles of **Neuro Imaging (NI)** giving outlines for typical studies (acquisition and analysis) and an associated terminology.
+- **3 fUS** explains the theory of fUSI signal (the full acquisition pipeline from emission to acquisition).
+- **4 Neurovascular coupling** presents the anatomical features of brain vascularisation, it details the historiographical description of the *neurovascular unit* recently reframed as *neurovascular complex*. The functional implication of this key component of non invasive NI such as fMRI and fUSI are also developed.
+- **5 Functional Connectivity** explains the story of the FC concept from the initial theroretical perspectives and the introduction of network in neuroscience to physical measurement with the emergence of NI, stative FC and later dynamic FC.
+- **6 Pharmacology** introduces the concepts borrowed from the field of pharmacology that motivated the application of this thesis. By integrating these principles with the framework of FC we show the relevance of awake fUSI for fingerprinting of pharmacological compounds.
 <br/>
 
 **Part II**:
