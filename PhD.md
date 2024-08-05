@@ -14,49 +14,49 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 ## I Introduction
 <br/>
 <h3 style = "text-indent: 50px;"> 1 Preamble </h3>
-### 2 General Introduction
-### 3 fUS
-### 4 Neurovascular Coupling
-### 5 Functional Connectivity
-### 6 Pharmacology
-### 7 Summary
+<h3 style = "text-indent: 50px;">  2 General Introduction </h3>
+<h3 style = "text-indent: 50px;">  3 fUS </h3>
+<h3 style = "text-indent: 50px;">  4 Neurovascular Coupling </h3>
+<h3 style = "text-indent: 50px;">  5 Functional Connectivity </h3>
+<h3 style = "text-indent: 50px;">  6 Pharmacology </h3>
+<h3 style = "text-indent: 50px;">  7 Summary </h3>
 <br/>
 ## II Preparation for awake imaging
 <br/>
-### 8 Article: Whole-Brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging
-### 9 Protocols
-### 10 Results
-### 11 Discussions
+<h3 style = "text-indent: 50px;">  8 Article: Whole-Brain 3D activation and functional connectivity mapping in mice using transcranial functional ultrasound imaging </h3>
+<h3 style = "text-indent: 50px;">  9 Protocols </h3>
+<h3 style = "text-indent: 50px;">  10 Results </h3>
+<h3 style = "text-indent: 50px;">  11 Discussions </h3>
 <br/>
 ## III Awake rs-FC with fUS
 <br/>
-### 12 artefacts
-### 13 Analysis Benchmark
+<h3 style = "text-indent: 50px;">  12 artefacts </h3>
+<h3 style = "text-indent: 50px;">  13 Analysis Benchmark </h3>
 <br/>
 ## IV Opioid fingerprint
 <br/>
-### 14 Article: Fingerprint of opioids on functional connectivity in awake behaving mice using functional ultrasound
-### 15 Discussions
+<h3 style = "text-indent: 50px;">  14 Article: Fingerprint of opioids on functional connectivity in awake behaving mice using functional ultrasound </h3>
+<h3 style = "text-indent: 50px;">  15 Discussions </h3>
 <br/>
 ## V Conclusions
 <br/>
-### References
-### List of Figures
+<h3 style = "text-indent: 50px;">  References </h3>
+<h3 style = "text-indent: 50px;">  List of Figures </h3>
 <br/>
 ## VI Appendices
 <br/>
-### A Articles
-### B Setup
-### C Acquisition
-### D Analysis pipeline
-### E Preparation details
-### F Data Structures
-### G Opioids fingerprint
-### H Cannabinoids fingerprint
-### I Psilocybin fingerprint
-### J Conscious states fingerprint
-### K Comparison of various fingerprints
-### L Co-Activation Pattern analysis
+<h3 style = "text-indent: 50px;">  A Articles </h3>
+<h3 style = "text-indent: 50px;">  B Setup </h3>
+<h3 style = "text-indent: 50px;">  C Acquisition </h3>
+<h3 style = "text-indent: 50px;">  D Analysis pipeline </h3>
+<h3 style = "text-indent: 50px;">  E Preparation details </h3>
+<h3 style = "text-indent: 50px;">  F Data Structures </h3>
+<h3 style = "text-indent: 50px;">  G Opioids fingerprint </h3>
+<h3 style = "text-indent: 50px;">  H Cannabinoids fingerprint </h3>
+<h3 style = "text-indent: 50px;">  I Psilocybin fingerprint </h3>
+<h3 style = "text-indent: 50px;">  J Conscious states fingerprint </h3>
+<h3 style = "text-indent: 50px;">  K Comparison of various fingerprints </h3>
+<h3 style = "text-indent: 50px;">  L Co-Activation Pattern analysis </h3>
 <br/>
 <br/>
 # For fUS enthusiastic
