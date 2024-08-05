@@ -5,12 +5,6 @@ subtitle: 5 years of my life summarised in 600p.
 permalink: /PhD.html
 ---
 
-<style>
-  h3:{
-    text-indent: 50px;
-  }
-</style>
-
 <a href="https://theses.hal.science/tel-04420129">
 <img src="https://JCMariani.github.io/assets/img/PhD_thesis_cover.png" alt="drawing" width="15%" class="center"/>
 </a>
@@ -19,7 +13,7 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 
 ## I Introduction
 <br/>
-<h3> 1 Preamble </h3>
+<h3 style = "text-indent: 50px;"> 1 Preamble </h3>
 ### 2 General Introduction
 ### 3 fUS
 ### 4 Neurovascular Coupling
