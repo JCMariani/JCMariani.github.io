@@ -14,7 +14,7 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 ## I Introduction
 <br/>
 <dl><dd>
-### 1 Preamble
+<h3> 1 Preamble </h3>
 </dd></dl>
 ### 2 General Introduction
 ### 3 fUS
