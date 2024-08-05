@@ -64,9 +64,14 @@ My thesis: [Quantification and modelling of functional connectivity perturbation
 I recommend to read in priority:
 
 **Introduction**: 
-- **3 fUS** which explains the theory of fUSI signal (the full acquisition pipeline from emission to acquisition)
-**Part III**: 
+- **3 fUS** which explains the theory of fUSI signal (the full acquisition pipeline from emission to acquisition) <br/>
+**Part II**: 
 - **8 article** [Bertolo et al. 2021](https://pubmed.ncbi.nlm.nih.gov/33720137/) details acquisition protocols for linear probe in both anaesthetised and awake, task-based and resting states.
-- **9 Protocols** emphasizes the awake case as reported in [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1) with refinement we developed all along the opioid cannabinoid and psilocybin studies
-- **10 Results** shows preliminary results regarding efficiency and controls over our awake preparation
+- **9 Protocols** emphasizes the awake case as reported in [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1) with refinement we developed all along the opioid cannabinoid and psilocybin studies.
+- **10 Results** shows preliminary results regarding efficiency and controls over our awake preparation.
+- **11 Discussion** discusses these result about our preparation. <br/>
+**Part III**: 
+- **12 Artefacts** discusses an important artefact found in awake recording, these results are preliminary but remain a huge limitation for awake transcranial fUSI.
+- **13 Benchmark** introduces a brief benchmark of the analysis pipeline we developped all along my PhD, it is the preliminary analysis behind of \[Diebolt et al. *in prep*\]. <br/>
+  
 
