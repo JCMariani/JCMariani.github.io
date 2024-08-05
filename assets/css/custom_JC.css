@@ -50,6 +50,6 @@
 	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 2;
-	zoom: 80%;
+	transform: scale(0.5);
 }
 
