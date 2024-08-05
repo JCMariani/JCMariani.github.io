@@ -67,6 +67,7 @@ I recommend to read in priority:
 <br/>
 - **3 fUS** which explains the theory of fUSI signal (the full acquisition pipeline from emission to acquisition)
 <br/>
+
 **Part II**:
 <br/>
 - **8 article** [Bertolo et al. 2021](https://pubmed.ncbi.nlm.nih.gov/33720137/) details acquisition protocols for linear probe in both anaesthetised and awake, task-based and resting states.
@@ -74,6 +75,7 @@ I recommend to read in priority:
 - **10 Results** shows preliminary results regarding efficiency and controls over our awake preparation.
 - **11 Discussion** discusses these result about our preparation.
 <br/>
+
 **Part III**:
 <br/>
 - **12 Artefacts** discusses an important artefact found in awake recording, these results are preliminary but remain a huge limitation for awake transcranial fUSI.
@@ -81,6 +83,11 @@ I recommend to read in priority:
 **Part IV**:
 - **14 article** first version of [Mariani et al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.30.604249v1), demonstrates how to use fUSI to investigate FC through the skull in awake behaving mice. It aggregates results from **part-II** and **part-III** in a practical example studying the fingerprint of opioids.
 - **15 Discussion** compares our main results with **pharmaco-MRI** literature. We also show the current limitations (intersubject variability, 3D coverage, resolution), proposing alternative solutions when necessary, but also future promess of the technology to aleviate these constrains as well as required future research to improve the current method.
+<br/>
+
+**Appendices**
+<br/>
+
 <br/>
 
 
