@@ -2,6 +2,7 @@
 layout: page
 title: Some drawings
 subtitle: McJibulles collection
+permalink: /drawings.html
 ---
 
 On this page I am showing you a few drawings of mine. I started to draw in preparatory school to make pass the long hours of french and english classes. Soon enough it became an habit that propagated to math and physics classes. Since that time I have played around with different graphical arts and associated means. You'll find here a bunch of drawings that I numerised, as well as some linocuts. Most of these drawings I try to make available as t-shirts, hoodies and other shower curtain. If you are interested you can have a look at my [online shop](https://mcjibulles.creator-spring.com/).
