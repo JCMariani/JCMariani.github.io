@@ -12,7 +12,7 @@ mathjax: true
 
 This post is adapted from the introduction of my PhD thesis. Full version can be find [here](https://theses.hal.science/tel-04420129).
 
-In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for \Gls{pet} imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute \Gls{fc} measures. One of the pioneer team in this effort is probably \emph{Karl Friston}'s which proposed the \emph{SPM} software, still broadly used in many publications. It is from this pipeline that we initially inspired to implement ours. The main steps of the analysis were already mentioned, they can be enumerated as follow:
+In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for **Positon Emission Tomography (PET)** imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute FC measures. One of the pioneer team in this effort is probably *Karl Friston*'s which proposed the **Statistical Parametric Mapping (SPM)** software, still broadly used in many publications. Most of the step I described below are inspired from this seminal work. The main steps of the analysis can be enumerated as follow:
 
 
 \begin{enumerate}
