@@ -38,7 +38,7 @@ The model of FC is detailed in another page of this website. I summarize here th
 
 Using this framework, if two regions possess a strong "connectivity", as formulated by the Hebbian principle, it is assumed that they would share some synchronous neuronal activity. Finally, if two regions haemodynamic signals are synchronous, as these signals are driven by neuronal activity they must be connected.
 
-<img src="https://JCMariani.github.io/assets/img/post-02_preprocessing_FC_cover.png" alt="drawing" class="center"/>
+<img src="https://JCMariani.github.io/assets/img/post-02_introduction_FC_principle.png" alt="drawing" class="center"/>
 <small>**Fig1.** Illustration of the FC model. Local population of excitatory and inhibitory neurons drive local blood flow. Long range connectivity drive synchronicity of between brain regions inducing correlation in haemodynamic signal. Middle, example of CBV bilateral correlation between two two regions of the rat cortex. Top at the baseline, bottom after injection of cannabinoids which perturb the synchronicity.</small>
 
 <!---    
