@@ -12,17 +12,16 @@ mathjax: true
 
 This post is adapted from the introduction of my PhD thesis. Full version can be find [here](https://theses.hal.science/tel-04420129).
 
-In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for **Positon Emission Tomography (PET)** imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute FC measures. One of the pioneer team in this effort is probably *Karl Friston*'s which proposed the **Statistical Parametric Mapping (SPM)** software, still broadly used in many publications. Most of the step I described below are inspired from this seminal work. The main steps of the analysis can be enumerated as follow:
+In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for **Positon Emission Tomography (PET)** imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute FC measures. One of the pioneering team in this effort is probably *Karl Friston*'s which proposed the **Statistical Parametric Mapping (SPM)** software, still broadly used in many publications. Most of the step I described below are inspired from this seminal work. These main steps of the analysis can be enumerated as follow:
 
 
-\begin{enumerate}
-    \item \textsc{Standardisation} is the first step of the analysis which consists in structuring the dataset. As a particular effort has been given to this step, a specific section is dedicated to this method later (see \niceRef{ssec:Data_Structuring}).
-    \item \textsc{Registration} consists in aligning all the images in a common coordinate system. To do so a common space must be defined, \emph{i.e.} a reference image. Then, a transform between the image and the reference must be estimated. Finally, the image is transformed to be mapped on this referential. The result of this transform shall ensure equivalence between the same voxels of two different images.
-    \item \textsc{Level 1}, as we saw, is the model at the individual level. It encodes the hypothesis used to build an object of interest. This object of interest is an observable, with usually reduced degrees of freedom as compared to the initial image. This object represents the quantity studied associated to each subject, in our case connectomes.
-    \item \textsc{Level 2}, is the model at the population level. It gathers the objects of interest computed at the level $$1$$ and estimates the significance of their difference after gathering them in groups of interest. In other terms it is the measure of the effect based on the hypothesis.
-\end{enumerate}
+1. **Standardisation** is the first step of the analysis which consists in structuring the dataset. If you are interested, don't hesitate to check the [fUSI-BIDS extension proposal document](https://docs.google.com/document/d/1W3z01mf1E8cfg_OY7ZGqeUeOKv659jCHQBXavtmT-T8/edit?usp=sharing).
+2. **Registration** consists in aligning all images in a common coordinate system. To do so a common space must be defined, *i.e.* a reference image. Then, a transform between the image and the reference must be estimated. Finally, the image is transformed to be mapped on this referential. The result of this transform shall ensure equivalence between the same voxels of two different images.
+3. **Level 1**, is the model at the individual level. It encodes the hypothesis used to build an object of interest. This object of interest is an observable, with usually reduced degrees of freedom as compared to the initial image. This object represents the quantity studied associated to each subject, in our case connectomes.
+4. **Level 2**, is the model at the population level. It gathers the objects of interest computed at the level $$1$$ and estimates the significance of their difference after gathering them in groups of interest. In other terms it is the measure of the effect based on the hypothesis.
 
-    
+
+<!---    
     \subsection{Analysis pipelines}
     \label{ssec::intro-analysis-pipelines}
 
@@ -123,3 +122,4 @@ In the end, the method to use depends on the question asked. It is the real tran
 
 We showed here how the concepts introduced in the previous chapter could be translated into mathematical formulations. Neuroimaging methods allows the measure of blood flow properties which ultimately is digitalised. From these formalised images, a succession of programs and algorithms permit to apply the fundamental principles of functional connectivity. By this succession of transforms, the image is ouput as simple objects that can be studied in the frameworks of classical statistics. The description of our implementation is detailed in the method part.
         
+-->
