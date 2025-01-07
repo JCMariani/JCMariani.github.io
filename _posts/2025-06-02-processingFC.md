@@ -41,6 +41,15 @@ Using this framework, if two regions possess a strong "connectivity", as formula
 <img src="https://JCMariani.github.io/assets/img/post-02_introduction_FC_principle.png" alt="drawing" class="center"/>
 <small>**Fig1.** Illustration of the FC model. Local population of excitatory and inhibitory neurons drive local blood flow. Long range connectivity drive synchronicity of between brain regions inducing correlation in haemodynamic signal. Middle, example of CBV bilateral correlation between two two regions of the rat cortex. Top at the baseline, bottom after injection of cannabinoids which perturb the synchronicity.</small>
 
+# First Level analysis
+
+As a consequence of the first section we can conclude that a good metric for in between regions connectivity is the measure of correlation of blood dynamics in a slow regime due to latency of the vascular system. More formally speaking FC can be defined as the measure of second order statistics of the haemodynamic signal. We can use the **Cerebral Blood Volume (CBV)** filtered in the infra-slow regime ($$<0.1Hz$$), as any higher frequency could not come from slow neurovascular coupling and can not be explained by neuronal source. In addition, we must eliminate alternative sources of slow covariance that are independent of neuronal activity. Otherwise, the FC could be artificially inflated, as demonstrated by studies showing the influence of cardiac or respiratory rhythms [Power et al 2017]. In the end, the first part of the model we make at the first level is that the signal of interest can be decomposed as:
+
+\begin{align}
+y = y_{FC} + y_{confounds} + \epsilon
+\label{eq:linear-signa-confound}
+\end{align}
+
 <!---    
 
         \subsubsection{First Level}
