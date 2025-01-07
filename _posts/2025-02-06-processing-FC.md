@@ -12,7 +12,7 @@ mathjax: true
 
 This post is adapted from the introduction of my PhD thesis. Full version can be find [here](https://theses.hal.science/tel-04420129).
 
-In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for **Positon Emission Tomography (PET)** imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute FC measures. One of the pioneering team in this effort is probably *Karl Friston*'s which proposed the **Statistical Parametric Mapping (SPM)** software, still broadly used in many publications. Most of the step I described below are inspired from this seminal work. These main steps of the analysis can be enumerated as follow:
+In this section I detail the methodological aspects regarding the analysis of **Functional Connectivity (FC)** patterns. In the last $$40$$ years, from the first methods developed for **Positon Emission Tomography (PET)** imaging, the field of neuroimaging has strongly standardised its approach. As a result, a set of shared practices has emerged. We present here the theoretical framework behind each of the steps used to compute FC measures. One of the pioneering team in this effort is probably *Karl Friston*'s which proposed the **Statistical Parametric Mapping (SPM)** software, still broadly used in many publications. Most of the step I described below are inspired from this seminal work. These main steps of the analysis, which can be generalised to most analyses of haemodynamics, can be enumerated as follow:
 
 
 1. **Standardisation** is the first step of the analysis which consists in structuring the dataset. If you are interested, don't hesitate to check the [fUSI-BIDS extension proposal document](https://docs.google.com/document/d/1W3z01mf1E8cfg_OY7ZGqeUeOKv659jCHQBXavtmT-T8/edit?usp=sharing).
@@ -20,53 +20,23 @@ In this section I detail the methodological aspects regarding the analysis of **
 3. **Level 1**, is the model at the individual level. It encodes the hypothesis used to build an object of interest. This object of interest is an observable, with usually reduced degrees of freedom as compared to the initial image. This object represents the quantity studied associated to each subject, in our case connectomes.
 4. **Level 2**, is the model at the population level. It gathers the objects of interest computed at the level $$1$$ and estimates the significance of their difference after gathering them in groups of interest. In other terms it is the measure of the effect based on the hypothesis.
 
+We will focus in this document on the last two steps in the case of FC. We remind here that FC results are observables of dynamical properties of the brain function. Based on a generative model of brain dynamics, from neuronal activity to neurovascular coupling, we expect covariance structures to emerge between individual timeseries of our image voxels. Under a stationarity hypothesis we can measure this covariance (over typically 10min windows) with the Pearson's correlation coefficient (most classically). Based on the model of FC we can interprete this observable (correlation between voxels or parcels) as connectivity between regions of the brain. As such, it is critical to remember that FC can be influenced by any stage of the model. Therefore, interpretation of FC changes must be always carried with caution as a drop of connectivity could mean loss of information transfer between two regions but also reduction of neurovascular coupling or network influence on regional dynamics. The interpretation of these FC variations is an open field of research as conventional (static) FC distil many aspects of the dynamics in a powerfull but simplified metrics.
+
+# FC model
+
+The model of FC is detailed in another page of this website. I summarize here the different steps of the reasoning behind the metric.
+
+1. The brain is a complex network of neurons which acts as integrator of information that propagates along axons and dendrite
+    - This network possess scaling properties which allow to identify more or less homogeneous regions
+    - These regions can be approximated as a local interaction between two populations of excitatory and inhibitory neurons which result in a local dynamic of the network that can be modelled as a dynamical system driven by differential equations (like an oscillator) [Deco 2011]
+    - There exist long range connections between these regions which introduces a coupling between the different regions
+3. The vascular system densely perfuses the brain tissue and blood flow is locally enslaved by neuronal activity as a low pass transfer function with a characteristic time of a few seconds
+    - In a feedforward model local activity of neurons results in an increase of blood perfusion to maintain homeosthasis through the neurovascular coupling [Iadecola 2017, Schaeffer et Iadecola 2021]
+    - Alternatively other models of neurovascular coupling propose that oscillations of local neuronal population (gamma oscillations) entrain vasomotion fluctuations [Mateo et al. 2017]
+
+Using this framework, if two regions possess a strong "connectivity", as formulated by the Hebbian principle, it is assumed that they would share some synchronous neuronal activity. Finally, if two regions haemodynamic signals are synchronous, as these signals are driven by neuronal activity they must be connected.
 
 <!---    
-    \subsection{Analysis pipelines}
-    \label{ssec::intro-analysis-pipelines}
-
-
-Here are presented the theoretical frameworks for each of these steps.
-    
-
-        \subsubsection{Registration}
-        \label{sssec::intro-registration}
-
-
-\begin{figure}[ht]
-\begin{center}
-    \includesvg[width = \linewidth]{Content/01_Introduction/01_Introduction_Figures/Intro_Registration.svg}
-    \caption{Illustration of registration transform. Left: Different types of geometric transforms. Similarities preserve angles and ratios, affine preserve paralellism, projections preserve colinearities, conformation preserve angles, equiareal transforms preserve the area, homeomorphism preserves neighbourhood and diffeomorphism are invertible bidifferentiable transforms. Right (adapted from \href{Elastix manual}{https://elastix.lumc.nl/download/elastix-5.0.1-manual.pdf}): Example of registration of an \Gls{fmri} image, top left: the reference, top right the image, bottom left: affine transform of the moving image on the fixed image, bottom right: diffeomorphism solution for the same images.}
-    \label{fig:registration}
-\end{center}
-\end{figure}
-
-        
-The registration problem is formally described in \cite{Klein2009-oc}. Taking one reference image called the \emph{fixed image} or $$I_F$$ and one image to be registered called the \emph{moving image} or $$I_M$$, the registration is solved by finding the optimal geometrical transform $$T_{\hat{\mu}}$$, parametrised with $$\hat{\mu}$$, aligning $$I_M$$ on $$I_F$$. Formally we look for the set of parameters $$\hat{\mu}$$ such as:
-
-\begin{align}
-\hat{\mu} = \underset{\mu}{argmin}\{ \mathcal{C}(T_{\mu},I_F,I_M) \}
-\end{align}
-
-Where $$\mathcal{C}$$ is a cost function defining the \guillemotleft distance\guillemotright between $$I_F$$ and $$I_M$$. In order to solve this problem, one must chose properly: the reference image, the family of transform, the cost function and the most adapted optimiser. 
-
-
-For the reference image, common templates can be found in the case of \gls{fmri}: \cite{Mazziotta_2001} for humans, \cite{Ma_2005} for mice. These templates are averages over tens to hundreds of co-registered images which represents a canonical image. These templates are expected to possess all the features required for the registration algorithm to converge to it, starting from any other image. 
-
-
-Without going too much in the details of transforms, two classes can be distinguished. On the one side \guillemotleft \textbf{linear} \guillemotright transforms on the other side \guillemotleft \textbf{non linear} \guillemotright transforms. Intuitively the \emph{linear} class is the one that preserves straight lines, the different types of transforms are illustrated in \niceFigRef{fig:registration}. The members of this first class are usually referred to as \emph{affine} transforms, even though projective transforms could fit as well. The \emph{non linear} class are usually referring to general diffeomorphisms which allow local deformation of the image. 
-
-
-Similarly, for the cost function various options are could be chose. The cost function is usually based on a distance like $$L_2$$ euclidean distance but can be also correlation based of other similar metrics. The most common one is probably the mutual information.
-
-\begin{align}
-MI(I_F, I_M) = \sum_{i\in \mathcal{I},j\in \mathcal{J}} P_{(I_F,I_M)}(i,j)log(\frac{P_{(I_M, I_F)}(i,j)}{P_{I_M}(i) P_{I_F}(j)})
-\end{align}
-
-Where $$(i,j)\forall i\in \mathcal{I},\ \forall j\in \mathcal{J}$$ are values of paired voxels, $$P_{(I_F,I_M)}$$ is the join probability mass function and $$P_{I_M}(i)$$, $$ P_{I_F}(j)$$ are the respective intensity probability for each image. For the choice of optimisers see \cite{Klein_2007} where the main algorithms are compared in the case of non linear transform and mutual information function.
-
-
-It is interesting to highlight that in practice, the direct tranform is not computed but rather the one from fixed image to the moving image, which is later inversed. Because images are finite, the risk of the direct transform would be to lack antecent in the moving image. In other sense, by mapping the moving image on the fixed image, some voxels would not be missing. This risk is minimised by performing the inverse transform \cite{Klein2009-oc}. 
 
         \subsubsection{First Level}
         \label{sssec::intro-first-level}
