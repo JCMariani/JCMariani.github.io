@@ -27,7 +27,7 @@ We will focus in this document on the last two steps in the case of FC. We remin
 
 # FC model
 
-The model of FC is detailed in <a href="https://JCMariani.github.io/2024-07-27-FC.html">another page of this website</a>. I summarize here the different steps of the reasoning behind the metric.
+The model of FC is detailed in [another page of this website](http://jcmariani.github.io/principleFC.html). I summarize here the different steps of the reasoning behind the metric.
 
 1. The brain is a complex network of neurons which acts as integrator of information that propagates along axons and dendrite
     - This network possess scaling properties which allow to identify more or less homogeneous regions
