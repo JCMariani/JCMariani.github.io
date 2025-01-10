@@ -8,6 +8,7 @@ share-img: post-02_preprocessing_FC_thumb.png
 tags: [implementation, neuroimaging, functional connectivity]
 author: JC Mariani
 mathjax: true
+permalink: /processingFC.html
 ---
 
 This post is adapted from the introduction of my PhD thesis. Full version can be find [here](https://theses.hal.science/tel-04420129).
