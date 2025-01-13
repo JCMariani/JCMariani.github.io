@@ -57,48 +57,24 @@ $$c(i,j) = \frac{<y_i, y_j>}{\sqrt{<y_i, y_i><y_j, y_j>}}$$
 
 Where $$y_i$$ and $$y_j$$ are two signals respectively extracted from region $$i$$ and region $$j$$ if $$y_i$$ and $$y_j$$ are centred (null mean).
 
-Under validity of the model, by combining these two steps we can infer the connectivity between two regions. In practice two canonical objects are used to gather these properties of the brain. With correlation matrices **Region of Interest (ROI)** are defined, either based on the brain anatomy or functional criterion (identification of regional clusters or **Independent Component Analysis (ICA)** based). The signals are extracted from these ROIs and the connectome encoded in a correlation matrix which represents pair wise correlation. Alternatively we can define one signal of reference, called the seed, and measure the connectivity of any other voxel with this seed. The seed signal is usually also extracted from a ROI in which case we refer the voxel wise correlation distribution as a seed based map. Alternatively the seed can be artificial in which case the object is usually referred to as an activation or correlation map. 
+Under validity of the model, by combining these two steps we can infer the connectivity between two regions. In practice two canonical objects are used to gather these properties of the brain. With correlation matrices **Region of Interest (ROI)** are defined, either based on the brain anatomy or functional criterion (identification of regional clusters or **Independent Component Analysis (ICA)** based). The signals are extracted from these ROIs and the connectome encoded in a correlation matrix which represents pair wise correlations. Alternatively we can define one signal of reference, called the seed, and measure the connectivity of any other voxel with this seed. The seed signal is usually also extracted from a ROI in which case we refer the voxel wise correlation distribution as a seed based map. Alternatively the seed can be artificial in which case the object is usually referred to as an activation or correlation map. 
 
+# Second Level
+
+The further down we go in the analysis, the more options are available. Consequently, there is no way to even get close to an exhaustive list of potential second levels. As a result, here, we only remind the fundamental concept, which is also shared with most other scientific areas, and give an example of implementation [Mariani et al. 2024]. From the first level we obtain a descriptor of each individual in the shape of a correlation matrix or a seed based map. The question we ask at the group level is whether two such collections are different, and if it is the case, what are these differences. The classical methods for correlation matrices and seed based maps rely on mass univariate approaches. All voxels are independently compared between the two groups. This method has pitfalls which are more detailed below. Alternatively, multivariate analysis could be used like **Principal Component Analysis (PCA)** for example.
+
+
+In the end, the method to use depends on the question you ask. It is the real translation of the working hypothesis in terms of statistics. If the effect is expected to have multilinear basis, an other GLM could be used. With the advances in machine learning and related tools, it becomes more common to use predictors and classifiers to perform such second level statistics.
+
+# Summary
+
+We showed here how the concepts introduced in [the FC principle post](http://jcmariani.github.io/principleFC.html) could be translated into mathematical formulations. Neuroimaging methods allow the measure of blood flow properties which ultimately is digitalised. From these images a succession of programs and algorithms permit to apply the fundamental principles of functional connectivity. By this succession of transforms, the image is ouput as simple objects that can be studied in the frameworks of classical statistics. 
 
 <!--
-\begin{align}
-y = y_{FC} + y_{confounds} + \epsilon
-\label{eq:linear-signa-confound}
-\end{align}
-
-Where $y$ is the signal, $y_{FC}$ the neuronally driven \Gls{fc} oscillation in the infra-slow band, $y_{confounds}$ a linear combination of coherent artefactual sources and $\epsilon$ some white noise. In other terms, we hypothesise that it is possible to extract a good estimate of neuronally driven vascular fluctuations by removing confounding nuisances and filtering in the infra-slow band. It is why developing optimal methods for nuisance removal has become a main subfield of neuroimaging. This question is later discussed in \niceRef{ssec::nuisance}. In the meantime it is worth mentioning that the main nuisance removal strategies are: detrend for removing slow drifts expected to come from hardware sources \cite{Liu_2017}, cardiac and breathing regression \cite{Bhattacharyya_2004, Shmueli_2007, Liu_2016}, motion regression \cite{Friston_95}, the global signal regression \cite{Power_2017}, principal component based regression \cite{Behzadi_2007}, censoring of artefactual frames or scrubbing \cite{Power_2012}.
-
-Finally, given $y_{FC}$ we hypothesise that the measure of covariance in two signals gives is proportional to, or at least monotonous in, the underlying functional connectivity of the regions it was extracted from. In our case we mostly used the \emph{Pearson}'s correlation coefficient:
-
-\begin{align}
-c(i,j) = \frac{<y_i, y_j>}{\sqrt{<y_i, y_i><y_j, y_j>}}
-\end{align}
-    
-Where $y_i$ and $y_j$ are two signals respectively extracted from region $i$ and region $j$ if $y_i$ and $y_j$ are centred (null mean).
 
 
-Under validity of the model, by combining these two steps we can infer the connectivity between two regions. In practice two canonical objects are used to gather these properties of the brain. With correlation matrices \Gls{roi}s are defined, either based on the brain anatomy or functional criterion (identification of regional clusters or \gls{ica} based). The signals are extracted from these \Gls{roi}s and the connectome encoded in a correlation matrix which represents pair wise correlation. Alternatively we can define one signal of reference, called the seed, and measure the connectivity of any other voxel with this seed. The seed signal is usually also extracted from a \Gls{roi} in which case we refer the voxel wise correlation distribution as seed based map. Alternatively the seed can be artificial in which case the object is an activation map. 
 
-
-Alternatively to correlation based establishment of connectomes, in this later case, it possible to use a general linear model to apply all these processing steps all at once. The idea is to leverage \ref{eq:linear-signa-confound} linear property to infer directly the covariance structure of each voxel. Using this method \cite{Friston_1996}, it is possible to regress multiple regressors at ones while, modelling the residual term for removing autocorrelation structure from the observed effect for example. As a result the \Gls{glm} can be used to compute seed based maps or activation maps. In this case \ref{eq:linear-signa-confound} becomes:
-
-
-\begin{align}
-y = \sum_{i} \beta_i y_i + \epsilon
-\label{eq:linear-GLM}
-\end{align}
-
-Where $y_i$ are the different regressors used for the regression. Usually a single regressor is associated to a seed of interest, while the other represent noise. It is interesting to notice that by introducing a family of cosine regressors, high pass filtering can be performed simultaneously. In the end, the measure of covariance with the seed is given by the value $\beta$ for this regressor.
-
-
-        \subsubsection{Second Level}
-        \label{sssec::intro-level2}
-
-
-As we illustrated in the introduction, the further we go in the analysis, the more options are available. Consequently, there is no way to even get close to an exhaustive list of potential second levels. We will therefore only remind the fundamental concept which is shared with most other scientific areas. From the first level we obtain a descriptor of each individual in the shape of correlation matrix or a seed based map. The question we ask at the group level is whether two such collections are different, and if it is the case what are these differences. The classical methods for correlation matrices and seed based maps rely on mass univariate approaches. All voxels are independently compared between the two groups. This method has pitfalls which are detailed in \niceRef{sssec:ParallelTTesting}. Alternatively multivariate analysis could be used like \Gls{pca} for example.
-
-
-In the end, the method to use depends on the question asked. It is the real translation of the working hypothesis in terms of statistics. If the effect is expected to have multilinear basis, an other \Gls{glm} could be used. With the advances in machine learning and related tools, it becomes more common to use predictors and classifiers to perform such second level statistics. 
+        
 
 
         \subsubsection{Summary}
