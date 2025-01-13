@@ -3,7 +3,7 @@ layout: post
 title: Preprocessing for Functional Connectivity
 subtitle: Mathematical formulation of the FC hypotheses
 cover-img: post-02_preprocessing_FC_cover.png
-thumbnail-img: /assets/img/post-02_preprocessing_FC_thumb.png
+thumbnail-img: post-02_preprocessing_FC_thumb.png
 share-img: post-02_preprocessing_FC_thumb.png
 tags: [implementation, neuroimaging, functional connectivity]
 author: JC Mariani
