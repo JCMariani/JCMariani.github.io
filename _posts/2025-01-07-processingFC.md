@@ -57,30 +57,122 @@ $$c(i,j) = \frac{<y_i, y_j>}{\sqrt{<y_i, y_i><y_j, y_j>}}$$
 
 Where $$y_i$$ and $$y_j$$ are two signals respectively extracted from region $$i$$ and region $$j$$ if $$y_i$$ and $$y_j$$ are centred (null mean).
 
-Under validity of the model, by combining these two steps we can infer the connectivity between two regions. In practice two canonical objects are used to gather these properties of the brain. With correlation matrices **Region of Interest (ROI)** are defined, either based on the brain anatomy or functional criterion (identification of regional clusters or **Independent Component Analysis (ICA)** based). The signals are extracted from these ROIs and the connectome encoded in a correlation matrix which represents pair wise correlations. Alternatively we can define one signal of reference, called the seed, and measure the connectivity of any other voxel with this seed. The seed signal is usually also extracted from a ROI in which case we refer the voxel wise correlation distribution as a seed based map. Alternatively the seed can be artificial in which case the object is usually referred to as an activation or correlation map. 
+Under validity of the model, by combining these two steps we can infer the connectivity between two regions. In practice two canonical objects are used to gather these properties of the brain. With correlation matrices **Region of Interest (ROI)** are defined, either based on the brain anatomy or functional criterion (identification of regional clusters or **Independent Component Analysis (ICA)** based). The signals are extracted from these ROIs and the connectome encoded in a **Correlation Matrix (CM)** which represents pair wise correlations. Alternatively we can define one signal of reference, called the seed, and measure the connectivity of any other voxel with this seed. The seed signal is usually also extracted from a ROI in which case we refer the voxel wise correlation distribution as a **Seed Based Map (SBM)**. Alternatively the seed can be artificial in which case the object is usually referred to as an activation or correlation map. 
 
 # Second Level
 
-The further down we go in the analysis, the more options are available. Consequently, there is no way to even get close to an exhaustive list of potential second levels. As a result, here, we only remind the fundamental concept, which is also shared with most other scientific areas, and give an example of implementation [Mariani et al. 2024]. From the first level we obtain a descriptor of each individual in the shape of a correlation matrix or a seed based map. The question we ask at the group level is whether two such collections are different, and if it is the case, what are these differences. The classical methods for correlation matrices and seed based maps rely on mass univariate approaches. All voxels are independently compared between the two groups. This method has pitfalls which are more detailed below. Alternatively, multivariate analysis could be used like **Principal Component Analysis (PCA)** for example.
+The further down we go in the analysis, the more options are available. Consequently, there is no way to even get close to an exhaustive list of potential second levels. As a result, here, we only remind the fundamental concept, which is also shared with most other scientific areas, we also give below suggestion to implement your own statistical pipeline. 
 
+From the first level we obtain a descriptor of each individual in the shape of a CM or a SBM. The question we ask at the group level is whether two such collections are different within a population, and if it is the case, what are these differences. The classical methods for CM and SBM rely on mass univariate approaches. All voxels are independently compared between the two groups. This method has pitfalls which are more detailed below. Alternatively, multivariate analysis could be used like **Principal Component Analysis (PCA)** for example.
 
 In the end, the method to use depends on the question you ask. It is the real translation of the working hypothesis in terms of statistics. If the effect is expected to have multilinear basis, an other GLM could be used. With the advances in machine learning and related tools, it becomes more common to use predictors and classifiers to perform such second level statistics.
 
+## Mass Univariate T-test
+
+The underlying idea behind this method is to consider the different components of the object of interest, whether its is a CM pixel or a SBM voxel, as independent. In this case, the null hypothesis can be spread across them all. A null hypothesis is tested element wise. The most common practice is to compute the difference between two distributions of correlation coefficient (a control group and experimental one or a baselive VS an active phase). From this test a $$t-value$$ is computed. This $$t-value$$ can be translated into a $$p-value$$ whose threshold, in absence of *prioir* knowledge on the system can be arbitrarily defined at $$5\%$$. Interpreting this parallel testing requires corrections for multiple comparisons (see below). The *Benjamini Hochberg* procedure permits to control the false discovery rate [Benjamini_1995]. After this step, significance is given element wise. For example CM significant changes between two conditions is given in the form of a matrix whose pixels are binary value. The value of an elemnt informs if the CM pixel has changed significantly in respect to the overall distribution of the changes.
+
+As an example [Mariani et al. 2024], most classically, the connectome of a group of $$9$$ mice after drug injection is compared to the connectomes of a group of $$11$$ mice after saline injection. If the connectome is defined as a correlation matrix between $$10$$ ROIs, a test is performed for each edge of the network or pixel of the lower triangle of the matrix ($$n_{test}= n_{vox}(n_{vox}-1)/2 =\ 45$$ tests). Each test compares the coefficients at the same position in the matrix for all $$9$$ mice for the first distribution, and $$11$$ mice for the second distribution. A $$t-value$$ is computed to quantify the distance between both distributions. Each $$t-value$$ can be translated into a $$p-value$$ to infer the chance that both distributions are coming from the same sample given the number of individuals in each group and the values of their coefficients. Because under the null hypothesis, the chance to reject it is proportional to the number of repeated tests, $$p-values$$ tend to overestimate the number of discoveries. The p-value must be corrected to control this risk of false discovery. We use $$Benjamini Hochberg$$ procedure to do so. All significant changes correspond to $$q-values\ < 0.05$$. 
+
+## Fisher transform
+
+In the case of the *Pearson's correlation coefficient, all the aforementioned procedures must follow a *Fisher*} transform of the coefficient. Indeed, because the correlation coefficient is included in $$[-1,1]$$ its variance is reduced for extreme values. The fisher transform $$r \rightarrow arctanh(r)$$ spreads correlation coefficients on the whole $$\mathbb{R}$$. It does so by giving a distribution almost normal whose variance is independent of $r$. By using the $Fisher$ transform, the correlation coefficient can be handled as a $$z-vlalue$$. Nevertheless, one must keep in mind that a *Fisher* transformed coefficient is not a $$z-value$$ *per se*. The space where correlation coefficient are transformed is called the *Fisher*'s space. For visualisation purposes it is more natural to observe the correlation coefficient in the correlation space ($$r\in [-1, 1]$$). Therefore, usually, coefficients are first sent in the *Fisher* space where then can be handled as $$z-score$$ to be compared or to compute an average, before being transformed back on the correlation space for visualisation.
+
+## Statistical Decision Tree
+
+Based on [Rahal2020}, you can define your "$$t-test$$" strategy are based on a decision tree:
+
+- A $$Shapiro Wilk$$ test is performed with $$\alpha = 0.1$$
+    - If the null hypothesis is rejected *i.e.* distribution is not Gaussian a non parametric *Wilcoxon-Mann-Whitney* test is performed.
+    - If the null hypothesis is not rejected, variance equality is tested with a $$F-test$$, two-tailed $$\alpha\ =\ 0.05$$.
+        - If the variances are equal, an equal variance $$t-test$$ is performed, two-tailed $$\alpha\ =\ 0.05$$
+        - If the variances are not equal, an unequal variance $$t-test$$ is performed, two-tailed $$\alpha\ =\ 0.05$$
+
+Whatever the object of interest, all its degrees of freedom (individual pixel of the SBM or CM) are tested independently following this procedure. After this step, the collection of $$p-values$$ are corrected to $$q-values$$ for multiple comparisons induced false positive rate control (see below). Then, the null hypothesis is rejected with $$\alpha\ =\ 0.05$$.
+
+## Multiple comparison
+
+The problem of multiple comparison is perfectly illustrated in [Bennett_2009] who identified significant clusters of voxels responding to a visual task in the brain of a dead salmon. The underlying principle rests in the fact that the number of false positives is linearly linked to the number of independent tests performed. For classical neuroimaging studies the number of tests is equal to the number of voxels, in the order of magnitude of $$\sim10^6$$ ($$10^4$$ for $$2D$$ fUSI). 
+
+
+The most common approach to correct statistical results obtained for parallel testing is *Bonferroni*'s correction method. In this case, the linear increase in false positives is countered by inversely reducing the threshold for $$Type I$$ errors $$\alpha = \alpha_0/n$$ where $$\alpha_0$$ is the single test threshold (usually $$0.05$$) and $$n$$ the number of tests. **Bonferroni**'s correction is known to be a peculiarly stringent correction as it considers all tests independent, which is not necessarily the case and peculiarly for neuroimaging where correlation structures exist between neighbouring voxels [Lindquist_2015]. 
+
+
+Alternatively, applying the **Random Field Theory** *Euler*'s characteristic was found a good quantifier to control the **Family Wise Error Rate (FWER)** which is the $$\alpha$$ equivalent when multiple tests are performed. Without entering in the details of this procedure the *Euler*'s characteristic estimates the number of connected clusters above a certain threshold inside an image of a certain smoothness. As a result, using this strategy controls for correlation structure, dealing with clusters instead of independent tests. The \RFT assumes that images are discrete sampling of continuous smooth random fields. This assumption is quite strong, to ensure this characteristic, smoothing kernels are usually applied to the images as a required step of pre-processing. Finally, *Euler*'s characteristic is function of this estimated smoothness of the random field. It was shown for low smoothness, that RFT based FWER is more stringent than *Bonferroni*'s correction [Nichols_2003].
+
+
+Finally, two methods have bee proposed to increase power of *Bonferroni*'s correction. *Holm*'s step-down method and *Benjamini*'s step up method or *Benjamini-Hochberg* procedure [Benjamini_1995] use an iterative process over sorted $$p-values$$ to refine research for maxima, well suited in the case of correlated tests [Nichols_2003]. The idea here is not to control the FWER, *i.e.* the overall number of false positive, but the **False Discovery Rate** *i.e.* the number of false discovery in the population of tests who rejected the null hypothesis, the ones for which the test is considered significant. For example, with *Benjamini*'s method if we call $$p_0\ <\ p_1\ <\ ...\ <p_i\ <\ ...<\ p_n$$ the set of our $$n$$ $$p-values$$ sorted in increasing values. To correct for a FDR of $$q=0.05$$ (*i.e.* we want to control that the number of false positive within rejected tests is below $$5\%$$), if $$r$$ is the maximal value so that $$p_r \leq \frac{i}{n}q$$, then all tests for which $$p_i\ \leq\ p_r$$ reject the null hypothesis. As explained in [Lindquist_2015], any procedure controlling FWER controls the FDR yielding to increased power of FDR, moreover it doesn't assume any *a priori* information on the distributions tested as opposed to RFT based control. In the end, for all these reasons, FDR correction is qmong the most popular method to solve the multiple comparison problem [Nichols_2003]. It is why wer recommend it here.
+
+
 # Summary
 
-We showed here how the concepts introduced in [the FC principle post](http://jcmariani.github.io/principleFC.html) could be translated into mathematical formulations. Neuroimaging methods allow the measure of blood flow properties which ultimately is digitalised. From these images a succession of programs and algorithms permit to apply the fundamental principles of functional connectivity. By this succession of transforms, the image is ouput as simple objects that can be studied in the frameworks of classical statistics. 
+We showed here how the concepts introduced in [the FC principle post](http://jcmariani.github.io/principleFC.html) could be translated into mathematical formulations. Neuroimaging methods allow the measure of blood flow properties which ultimately is digitalised. From these images a succession of programs and algorithms permit to apply the fundamental principles of functional connectivity. By this succession of transforms, the image is ouput as simple objects that can be studied in the frameworks of classical statistics. We finally introduced the main statistical caveat associated with neuroimaging analyses.
+
 
 <!--
 
+        \subsubsection{Parallel t-testing}\text{}\newline
+        \label{sssec:ParallelTTesting}
+        
 
+The underlying idea behind this method is to consider the different components of the object of interest, whether its is a \Gls{cm} pixel or a \Gls{sbm} voxel, as independent. In this case, the null hypothesis can be spread across them all. A null hypothesis is tested element wise. The difference between two distributions of correlation coefficient is usually tested. From this test a $t-value$ is output. The $t-value$ can be translated into a $p-value$ whose threshold, in absence of \emph{prioir} knowledge on the system can be arbitrarily defined at $5\%$. Interpreting this parallel testing requires corrections for multiple comparisons \niceRef{par:multiple-comparison}. The \emph{Benjamini Hochberg} permits to control the false discovery rate \cite{Benjamini_1995}. After this step significance is given element wise. For example \Gls{cm} significant changes between two conditions is given in the form of a matrix whose pixels are binary value. The value informes if the \Gls{cm} pixel has changed significantly in respect to overall distribution of the changes.
+
+
+As an example, most classically, the connectome of a group of $9$ mice after drug injection is compared to the connectomes of a group of $11$ mice after saline injection. If the connectome is defined as a correlation matrix between $10$ \Gls{rois}, a test is performed for each edge of the network or pixel of the lower triangle of the matrix ($n_{test}= n_{vox}(n_{vox}-1)/2 =\ 45$ tests). Each test compares the coefficients at the same position in the matrix for all $9$ mice for the first distribution, and $11$ mice for the second distribution. A $t-value$ is computed to quantify the distance between both distributions. Each $t-value$ can be translated into a $p-value$ to infer the chance that both distributions are coming from the same sample given the number of individuals in each group and the values of their coefficient. Because under the null hypothesis, the chance to reject it is proportional to the number of repeated tests, $p-values$ tend to overestimate the number of discoveries. The p-value must be corrected to control this risk of false discovery \niceRef{par:fisher-transform}. We use \emph{Benjamini Hochberg} procedure to do so. All significant changes correspond to $q-values\ < 0.05$. 
+
+            \paragraph{Fischer transform}
+            \label{par:fisher-transform}
+
+In the case of the \emph{Pearson} coefficient of correlation all the aforementioned procedures must follow a \emph{Fisher} transform of the coefficient. Indeed, because the correlation coefficient is included in $[-1,1]$ its variance is reduced for extreme values. The fisher transform $r \rightarrow arctanh(r)$ spreads correlation coefficients on $\mathbb{R}$ as whole. It does so by giving a distribution almost normal whose variance is independent of $r$. By using the \emph{Fisher} transform the correlation coefficient can be handled as a \emph{z-vlalue}. Nevertheless, one must keep in mind that a \emph{Fisher} transformed coefficient is not a \emph{z-value per se}. The space where correlation coefficient are transformed is called the \emph{Fisher}'s space. For visualisation purposes it is more natural to observe the correlation coefficient in the correlation space ($r\in [-1, 1]$). Therefore, usually, coefficients are first sent in the \emph{Fisher} space where then can be handled as $z-score$ to be compared or to compute an average before being transformed back on the correlation space for visualisation.
+
+
+
+            \paragraph{Statistical paradigm}\text{}\newline
+            \label{par:statitical-paradigm}
+
+
+\begin{figure}[ht]
+\begin{center}
+    \includesvg[width = \linewidth]{Content/02_Methods/02_Methods_Figures/Statistics-tree.svg}
+    \caption{Illustration of the statistical paradigm. When two distributions are given. First their gaussianity is assessed with \emph{Shapiro Wilk}. If failed, a non parametric \emph{Wilcoxon-Mann-Whitney} test is applied. Else is tested the variance equality. Depending on the result either an equal variance $t-test$ is applied else an unequal variance test is applied. Finally, multiple comparisons are corrected with the \emph{Benjamini-Hochberg} correction.}
+    \label{fig::statistical-tree}
+\end{center}
+\end{figure}
+
+
+Based on \cite{Rahal2020}, \guillemotleft \verb!t-test! \guillemotright are based on a decision tree:
+
+\begin{itemize}
+    \item A \emph{Shapiro Wilk} test is performed $\alpha = 0.1$
+    \begin{itemize}
+        \item If the null hypothesis is rejected \emph{i.e.} distribution is not Gaussian a non parametric \emph{Wilcoxon-Mann-Whitney} test is performed.
+        \item If the null hypothesis is not rejected variance equality is tested with a $F-test$, two-tailed $\alpha\ =\ 0.05$.
+        \begin{itemize}
+            \item If the variances are equal, an equal variance $t-test$ is performed, two-tailed $\alpha\ =\ 0.05$
+            \item If the variances are not equal, an unequal variance $t-test$ is performed, two-tailed $\alpha\ =\ 0.05$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+Whatever the object of interest, all its degrees of freedom (individual pixel of the \Gls{sbm} or \Gls{cm}) are tested independently following this procedure. After this step, the collection of \verb!p-values! are corrected to \verb!q-values! for multiple comparisons induced false positive rate control (see \niceRef{par:multiple-comparison}). Then, the null hypothesis is rejected with $\alpha\ =\ 0.05$.
+
+            \paragraph{Multiple comparisons problem}\text{}\newline
+            \label{par:multiple-comparison}
+
+
+The problem of multiple comparison is perfectly illustrated in \cite{Bennett_2009} who identified significant clusters of voxels responding to a visual task in the brain of a dead salmon. The underlying principle rests in the fact that the number of false positives is linearly linked to the number of independent tests performed. For classical neuroimaging studies the number of tests is equal to the number of voxels, in the order of magnitude of $\sim10^6$ ($10^4$ for $2D$ \gls{fus}). 
+
+
+The most common approach to correct statistical results obtained for parallel testing is \emph{Bonferroni}'s correction method. In this case, the linear increase in false positives is countered by inversely reducing the threshold for $Type I$ errors $\alpha = \alpha_0/n$ where alpha is the single test threshold (usually $0.05$) and $n$ the number of tests. \emph{Bonferroni}'s correction is known to be a peculiarly stringent correction as it considers all tests independent, which is not necessarily the case and peculiarly for neuroimaging where correlation structures exist between neighbouring voxels \cite{Lindquist_2015}. 
+
+
+Alternatively, applying the \Gls{rft} \emph{Euler}'s characteristic was found a good quantifier to control the \Gls{fwer} which is the $\alpha$ equivalent when multiple tests are performed. Without entering in the details of this procedure the \emph{Euler}'s characteristic estimates the number of connected clusters above a certain threshold inside an image of a certain smoothness. As a result, using this strategy controls for correlation structure, dealing with clusters instead of independent tests. The \Gls{rft} assumes that images are discrete sampling of continuous smooth random fields. This assumption is quite bold, to ensure this characteristic, smoothing kernels are usually applied to the images as a required step of pre-processing. Finally, \emph{Euler}'s characteristic is function of this estimated smoothness of the random field. It was shown for low smoothness, that \Gls{rft} based \Gls{fwer} is more stringent than \emph{Bonferroni}'s correction \cite{Nichols_2003}.
+
+
+Finally, two methods have bee proposed to increase power of \emph{Bonferroni}'s correction. \emph{Holm}'s step-down method and \emph{Benjamini}'s step up method or \emph{Benjamini-Hochberg} procedure \cite{Benjamini_1995} use an iterative process over sorted $p-values$ to refine research for maxima, well suited in the case of correlated tests \cite{Nichols_2003}. The idea here is not to control the \Gls{fwer}, \emph{i.e.} the overall number of false positive, but the \Gls{fdr} \emph{i.e.} the number of false discovery in the population of tests who rejected the null hypothesis, the ones for which the test is considered significant. For example, with \emph{Benjamini}'s method if we call $p_0\ <\ p_1\ <\ ...\ <p_i\ <\ ...<\ p_n$ the set of our $n$ $p-values$ sorted in increasing values. To correct for a \Gls{fdr} of $q=0.05$ (\emph{i.e.} we want to control that the number of false positive within rejected tests is below $5\%$), if $r$ is the maximal value so that $p_r \leq \frac{i}{n}q$, then all tests for which $p_i\ \leq\ p_r$ reject the null hypothesis. As explained in \cite{Lindquist_2015}, any procedure controlling \Gls{fwer} controls the \Gls{fdr} yielding to increased power of \Gls{fdr}, moreover it doesn't assume any \emph{a priori} information on the distributions tested as opposed to \Gls{rft} based control. In the end, for all these reasons, \Gls{fdr} correction is believed to become soon the most popular method to solve the multiple comparison problem \cite{Nichols_2003}. For our analyses we decided to use \emph{Benjamini-Hochberg} procedure.
 
         
 
 
-        \subsubsection{Summary}
-
-
-We showed here how the concepts introduced in the previous chapter could be translated into mathematical formulations. Neuroimaging methods allows the measure of blood flow properties which ultimately is digitalised. From these formalised images, a succession of programs and algorithms permit to apply the fundamental principles of functional connectivity. By this succession of transforms, the image is ouput as simple objects that can be studied in the frameworks of classical statistics. The description of our implementation is detailed in the method part.
 
         \subsubsection{Motion artefact}
 
